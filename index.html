@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лабораторная работа №1</title>
+<script type="text/javascript">
+
+function lnX(){
+var i = Number(document.forms["form"].elements["i"].value);
+var x = Number(document.forms["form"].elements["x"].value);
+
+if (x <= 0 || x > 2) {
+document.write("x должно быть в пределах (0, 2]");
+return;
+}
+
+var sum = 0;
+for (var n = 0; n < i; n++) {
+var term = Math.pow(-1, n) * Math.pow(x - 1, n + 1) / (n + 1);
+sum += term;
+}
+
+document.write("Результат: " + sum);
+}
+</script>
+</head>
+<body>
+        <h1>Вычисление ln(x)</h1>
+<section>
+        <div class="container">
+                <form id="form">
+                <input id="i" type="text" name="" placeholder="Введите ограничитель">
+                <input id="x" type="text" name="" placeholder="Введите x">
+                <input class="button" onclick="lnX()" type="submit" name="" value="Отправить">
+</div>
+</section>
+</body>
+</html> 
